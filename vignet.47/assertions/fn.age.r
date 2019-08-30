@@ -1,0 +1,20 @@
+{"copyright":"VigNet: Copyright 2003-2017 (c), WordsEye Inc",
+"data":[{"fn.age.r":{"entity":"youngster.n","age":{"type":"range.val","value":null,"min":null,"max":12,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"adolescent.n","age":{"type":"range.val","value":null,"min":13,"max":18,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"coot.n","age":{"type":"range.val","value":null,"min":70,"max":null,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"geezer.n","age":{"type":"range.val","value":null,"min":70,"max":null,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"tot.n","age":{"type":"range.val","value":null,"min":1,"max":5,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"toddler.n","age":{"type":"range.val","value":null,"min":1,"max":2,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"teenager+adult.n","age":{"type":"range.val","value":null,"min":13,"max":null,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"teenager.n","age":{"type":"range.val","value":null,"min":13,"max":18,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"senior-citizen.n","age":{"type":"range.val","value":null,"min":70,"max":null,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"old-woman.n","age":{"type":"range.val","value":null,"min":70,"max":null,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"newborn.n","age":{"type":"range.val","value":null,"min":null,"max":0.4,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"juvenile.n","age":{"type":"range.val","value":null,"min":null,"max":18,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"ingenue.n","age":{"type":"range.val","value":null,"min":13,"max":18,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"elderly.n","age":{"type":"range.val","value":null,"min":80,"max":null,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"child.n","age":{"type":"range.val","value":null,"min":null,"max":12,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"baby.n","age":{"type":"range.val","value":null,"min":null,"max":2,"count":null},"certainty":"typically-true-val.n"}},
+{"fn.age.r":{"entity":"adult.n","age":{"type":"range.val","value":null,"min":18,"max":null,"count":null},"certainty":"typically-true-val.n"}}
+]
+}

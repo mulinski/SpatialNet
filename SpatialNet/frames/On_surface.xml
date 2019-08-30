@@ -1,0 +1,56 @@
+<frame name="On_surface" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Spatial_contact"/>
+  <FE name="Figure"/>
+  <FE name="Ground"/>
+  <valencePatterns>
+    <!-- fig is on X of the ground -->
+    <pattern id="21">
+      <dep lexUnit="true" pred="true" order="3">
+        <dep FE="Figure" reln="nsubj" order="1"/>
+        <dep reln="case" word="on" order="2"/>
+        <dep reln="nmod" FE="Ground" order="5">
+          <dep reln="case" word="of" order="4"/>
+        </dep>
+      </dep>
+    </pattern>
+  </valencePatterns>
+  <lexUnit name="on_top_of.adp">
+    <lexeme tag="ADP" word="on" order="1">
+      <dep word="top" reln="mwe" order="2"/>
+      <dep word="of" reln="mwe" order="3"/>
+    </lexeme>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="on.adp">
+    <lexeme tag="ADP" word="on">
+      <exclude-dep reln="mwe"/>
+    </lexeme>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="front.n">
+    <lexeme tag="NOUN" word="front"/>
+    <use-pattern id="21"/>
+  </lexUnit>
+  <lexUnit name="back.n">
+    <lexeme tag="NOUN" word="back"/>
+    <use-pattern id="21"/>
+  </lexUnit>
+  <lexUnit name="side.n">
+    <lexeme tag="NOUN" word="side"/>
+    <use-pattern id="21"/>
+  </lexUnit>
+  <lexUnit name="bottom.n">
+    <lexeme tag="NOUN" word="bottom"/>
+    <use-pattern id="21"/>
+  </lexUnit>
+  <lexUnit name="underside.n">
+    <lexeme tag="NOUN" word="underside"/>
+    <use-pattern id="21"/>
+  </lexUnit>
+  <lexUnit name="top.n">
+    <lexeme tag="NOUN" word="top"/>
+    <use-pattern id="21"/>
+  </lexUnit>
+</frame>

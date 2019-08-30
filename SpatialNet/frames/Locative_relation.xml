@@ -1,0 +1,72 @@
+<frame name="Locative_relation" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <FE name="Figure"/>
+  <FE name="Ground"/>
+  <!-- for distance -->
+  <FE name="Count"/>
+  <FE name="Unit"/>
+  <FE name="Distance"/>
+  <valencePatterns>
+    <!-- The *fig* *rel* the *ground* -->
+    <pattern id="1">
+      <dep FE="Ground" tag="NOUN" order="3">
+        <dep FE="Figure" reln="nsubj" order="1"/>
+        <dep pred="true" reln="case" lexUnit="true" order="2"/>
+      </dep>
+    </pattern>
+    <!-- The *fig* IS *rel* the *ground* -->
+    <!-- This also handles "there is a fig on the ground -->
+    <pattern id="2">
+      <dep tag="VERB" pred="true" not-lemma="lean|tilt|hang" order="2">
+        <dep FE="Figure" reln="nsubj" order="1"/>
+        <dep FE="Ground" reln="nmod" order="4">
+          <dep reln="case" lexUnit="true" order="3"/>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- TODO: add "the dog that is 10 feet over the ground"-->
+    <!-- TODO add "there is a dog 10 feet over the ground"-->
+    <!-- fig is count unit rel the ground -->
+    <pattern id="20">
+      <dep tag="NOUN" FE="Unit" order="3">
+        <dep FE="Figure" reln="nsubj" order="1"/>
+        <dep FE="Count" reln="nummod" order="2"/>
+        <dep FE="Ground" reln="nmod" order="5">
+          <dep pred="true" reln="case" lexUnit="true" order="4"/>
+        </dep>
+      </dep>
+    </pattern>
+    <!--pattern id="20">
+      <dep tag="NOUN" FE="Distance" order="2">
+        <dep FE="Figure" reln="nsubj" order="1"/>
+        <dep FE="Ground" reln="nmod" order="4">
+          <dep pred="true" reln="case" lexUnit="true" order="3"/>
+        </dep>
+      </dep>
+    </patterns-->
+    <!-- fig is in the X of the ground -->
+    <pattern id="22">
+      <dep lexUnit="true" order="3">
+        <dep reln="nsubj" FE="Figure" order="1"/>
+        <dep reln="case" word="in" pred="true" order="2"/>
+        <dep reln="nmod" FE="Ground" order="5">
+          <dep reln="case" word="of" order="4"/>
+        </dep>
+      </dep>
+    </pattern>
+  </valencePatterns>
+
+  <lexUnit name="middle.n">
+    <lexeme tag="NOUN" word="middle"/>
+    <use-pattern id="22"/>
+  </lexUnit>
+  <lexUnit name="center.n">
+    <lexeme tag="NOUN" word="center"/>
+    <use-pattern id="22"/>
+  </lexUnit>
+  <!--TODO: vignettes for around-->
+  <lexUnit name="around.adp">
+    <lexeme tag="ADP" word="around"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+</frame>

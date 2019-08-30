@@ -1,0 +1,85 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet vignettes.xsd"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+  <!-- abstract vignettes define basic Figure-figure, Ground-ground mappings -->
+
+  <!-- parent vignette for locative relations without distance -->
+  <vignette abstract="true" name="spatial-relation">
+    <input frame="Locative_relation"/>
+    <constraints>
+      <type-constraint FE="Figure" type="physical-entity.n"/>
+      <type-constraint FE="Ground" type="physical-entity.n"/>
+      <!-- Use NOT abstract-entity instead of physical entity to allow for front of wall etc -->
+      <!--type-constraint negated="true" FE="Ground" type="abstract-entity.n"/>
+      <type-constraint negated="true" FE="Figure" type="abstract-entity.n"/-->
+    </constraints>
+    <!-- generic relation for convenience - child vignettes define actual spatial relation -->
+    <output name="spatial-relation-mixin">
+      <map FE="Figure" arg="figure"/>
+      <map FE="Ground" arg="ground"/>
+      <map arg="reference-frame" FE="Ground"/>
+    </output>
+  </vignette>
+
+  <!-- parent vignette for locative relations with distance -->
+  <vignette abstract="true" name="spatial-relation-with-distance" parent="spatial-relation">
+    <input frame="Locative_relation"/>
+    <constraints>
+      <type-constraint FE="Unit" type="distance-unit.n"/>
+    </constraints>
+    <output name="spatial-relation-mixin" parent="spatial-relation-mixin">
+      <map FE="Count" arg="measure-cardinality"/>
+      <map FE="Unit" arg="measure-unit"/>
+    </output>
+  </vignette>
+
+
+  <!-- on front, back, bottom, top surface -->
+  <xi:include href="vignettes/on-surface-vignettes.xml" />
+
+  <!-- left of, right of, in front of, behind, above, below -->
+  <xi:include href="vignettes/adjacency-vignettes.xml"/>
+
+  <!-- under-canopy, stem-in-cup, in-cup, in-3d-enclosure, in-entanglement -->
+  <xi:include href="vignettes/containing-vignettes.xml"/>
+
+  <!-- one object embedded in another (stick in ground etc) -->
+  <xi:include href="vignettes/embedded-in-vignettes.xml"/>
+
+  <!-- e.g. in a field -->
+  <xi:include href="vignettes/in-area.xml"/>
+
+  <!-- part/whole relations - how to integrate this better with spatial vignettes? -->
+  <!-- TODO:  spatial relation vignettes should check the type of the whole, not the part -->
+  <!-- TODO: fix part/whole stuff so it actually works -->
+  <xi:include href="vignettes/part-of.xml"/>
+
+
+  <!--orientation adjectives (upside-down, supine etc) -->
+  <xi:include href="vignettes/orientation-intrinsic-vignettes.xml"/>
+
+  <!-- orientation toward (facing) something else (object or direction) -->
+  <!-- TODO: orientation AWAY FROM -->
+  <xi:include href="vignettes/oriented-toward-vignettes.xml"/>
+
+  <!-- X leans on/against/toward Y -->
+  <xi:include href="vignettes/lean-on-vignettes.xml"/>
+
+
+  <!-- colors -->
+  <vignette name="color-of">
+    <input frame="Color" lexUnit="DEFAULT"/>
+    <constraints>
+      <type-constraint FE="Color" type="color.n"/>
+    </constraints>
+    <output relation="we.color-of.r">
+      <map FE="Entity" arg="entity"/>
+      <map FE="Color" arg="value"/>
+    </output>
+  </vignette>
+
+
+</vignettes>

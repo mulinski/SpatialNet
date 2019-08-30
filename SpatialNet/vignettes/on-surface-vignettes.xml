@@ -1,0 +1,88 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+
+  <!-- X on (front of) Y -->
+  <vignette name="on-front-surface" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="on.adp"/>
+    <input frame="Spatial_contact" lexUnit="hang.v"/>
+    <constraints>
+      <or>
+        <assertion-constraint relation="gfx.preferred-surfaces.r">
+          <map arg="entity" FE="Ground"/>
+          <map arg="surface" value="front-surface"/>
+        </assertion-constraint>
+        <type-constraint FE="Ground" type="f-vertical-surface.n"/>
+        <!--type-constraint FE="Ground" type="front-surface-tagged-item"/-->
+      </or>
+      <type-constraint FE="Figure" type="f-wall-item.n"/>
+    </constraints>
+    <output relation="gfx.on-front-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <vignette name="on-front-surface-wall-item" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="on.adp"/>
+    <input frame="Spatial_contact" lexUnit="hang.v"/>
+    <constraints>
+      <type-constraint FE="Figure" type="f-wall-item.n"/>
+    </constraints>
+    <output relation="gfx.on-front-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <!-- explicitly specify the front -->
+  <!-- TODO: does hanging always imply front? -->
+  <vignette name="on-front-surface-no-constraints" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="front.n"/>
+    <input frame="Spatial_contact" lexUnit="hang.v"/>
+    <output relation="gfx.on-front-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- "the X on the ceiling; the X in the middle of the ceiling"; uses affordances -->
+  <vignette name="on-bottom-surface" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="on.adp"/>
+    <input frame="Locative_relation" lexUnit="middle.n"/>
+    <input frame="Locative_relation" lexUnit="center.n"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Ground" type="ceiling.n"/>
+        <assertion-constraint relation="gfx.preferred-surfaces.r">
+          <map arg="entity" FE="Ground"/>
+          <map arg="surface" value="bottom-surface"/>
+        </assertion-constraint>
+      </or>
+    </constraints>
+    <output relation="gfx.on-bottom-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <!-- "X on the bottom/underside of the Y" -->
+  <vignette name="on-bottom-surface-no-constraints" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="bottom.n"/>
+    <input frame="On_surface" lexUnit="underside.n"/>
+    <output relation="gfx.on-bottom-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- "the X on the table; the X in the middle of the table" -->
+  <vignette name="on-top-surface" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="on.adp"/>
+    <input frame="Locative_relation" lexUnit="middle.n"/>
+    <input frame="Locative_relation" lexUnit="center.n"/>
+    <constraints>
+      <assertion-constraint relation="gfx.preferred-surfaces.r">
+        <map arg="entity" FE="Ground"/>
+        <map arg="surface" value="top-surface"/>
+      </assertion-constraint>
+    </constraints>
+    <output relation="gfx.on-top-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <!--  X on top of Y -->
+  <vignette name="on-top-surface-no-constraints" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="on_top_of.adp"/>
+    <input frame="On_surface" lexUnit="top.n"/>
+    <output relation="gfx.on-top-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+
+  <!-- fallback for "on" -->
+  <vignette name="default-on" parent="spatial-relation">
+    <input frame="On_surface" lexUnit="on.adp"/>
+    <output relation="gfx.on-top-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+</vignettes>

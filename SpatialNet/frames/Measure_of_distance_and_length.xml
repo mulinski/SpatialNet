@@ -1,0 +1,50 @@
+<frame name="Measure_of_distance_and_length" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <FE name="Count"/>
+  <FE name="Unit"/>
+  <valencePatterns>
+    <pattern id="29">
+      <dep tag="NOUN" FE="Unit" order="2">
+        <dep FE="Count" reln="nummod" order="1"/>
+      </dep>
+    </pattern>
+  </valencePatterns>
+  <!--lexUnit name="block.n">
+    <lexeme lemma="block" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit-->
+  <lexUnit name="centimeter.n">
+    <lexeme lemma="centimeter" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+  <lexUnit name="foot.n">
+    <lexeme lemma="foot" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+  <!-- TODO: furlong -->
+  <lexUnit name="inch.n">
+    <lexeme lemma="inch" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+  <lexUnit name="kilometer.n">
+    <lexeme lemma="kilometer" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+  <!-- TODO: light-year.n -->
+  <lexUnit name="meter.n">
+    <lexeme lemma="meter" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+  <lexUnit name="mile.n">
+    <lexeme lemma="mile" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+  <lexUnit name="millimeter.n">
+    <lexeme lemma="millimeter" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+  <lexUnit name="yard.n">
+    <lexeme lemma="yard" tag="NOUN"/>
+    <use-pattern id="29"/>
+  </lexUnit>
+
+</frame>

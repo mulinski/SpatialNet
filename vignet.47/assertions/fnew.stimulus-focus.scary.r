@@ -1,0 +1,22 @@
+{"copyright":"VigNet: Copyright 2003-2017 (c), WordsEye Inc",
+"data":[{"fnew.stimulus-focus.scary.r":{"stimulus":"obj-finger_severed-vp21998"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"obj-door_spooky-vp22062"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"obj-hands_rising_from_grave-vp21995"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"wizard.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"witch.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"voodoo-doll.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"tombstone.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"tomb.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"skull.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"skull-and-crossbones-symbol.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"skeleton.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"monster.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"haunted-house.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"grim-reaper.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"goblin.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"genie.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"fiendish-spirit.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"cacodemon.n","certainty":"typically-true-val.n"}},
+{"fnew.stimulus-focus.scary.r":{"stimulus":"apparition.n","certainty":"typically-true-val.n"}}
+]
+}

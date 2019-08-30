@@ -1,0 +1,20 @@
+<frame name="Part_orientational" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Part_whole"/>
+  <FE name="Part"/>
+  <FE name="Whole"/>
+  <valencePatterns>
+    <!-- TODO: messing up on "the chair is right of the table." -->
+    <!-- TODO: how to exclude "to the" as a unit -->
+    <pattern id="12">
+      <dep pred="true" FE="Part" tag="NOUN" order="1">
+        <exclude-dep reln="case" word="to"/>
+        <dep reln="nmod" FE="Whole" order="3">
+          <dep reln="case" word="of" order="2"/>
+        </dep>
+      </dep>
+    </pattern>
+  </valencePatterns>
+  <lexUnit name="DEFAULT">
+    <use-pattern id="12"/>
+  </lexUnit>
+</frame>

@@ -1,0 +1,26 @@
+<frame name="Color" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Gradable_attributes"/>
+  <FE name="Entity"/>
+  <FE name="Attribute"/>
+  <FE name="Color" parent="Value"/>
+  <valencePatterns>
+    <!-- the entity is color -->
+    <pattern id="6">
+      <dep pred="true" FE="Color" tag="ADJ" order="2">
+        <dep FE="Entity" reln="nsubj" order="1"/>
+      </dep>
+    </pattern>
+    <!-- the color entity -->
+    <pattern id="7">
+      <dep FE="Entity" tag="NOUN" order="2">
+        <dep pred="true" FE="Color" reln="amod" order="1"/>
+      </dep>
+    </pattern>
+  </valencePatterns>
+  <lexUnit name="DEFAULT">
+    <use-pattern id="6"/>
+    <use-pattern id="7"/>
+  </lexUnit>
+  <!--lexUnit name="color.a">
+  </lexUnit-->
+</frame>

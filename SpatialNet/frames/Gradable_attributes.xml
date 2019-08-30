@@ -1,0 +1,7 @@
+<frame name="Gradable_attributes" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Attributes"/>
+  <FE name="Entity"/>
+  <FE name="Attribute"/>
+  <FE name="Value"/>
+  <FE name="Degree"/>
+</frame>

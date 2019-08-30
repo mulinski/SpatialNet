@@ -1,0 +1,4 @@
+<frame name="Part_whole" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <FE name="Part"/>
+  <FE name="Whole"/>
+</frame>

@@ -1,0 +1,24 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+<!-- part/whole relations - how to integrate this better with spatial vignettes? -->
+<!-- TODO:  spatial relation vignettes should check the type of the whole, not the part -->
+<!-- TODO: fix part/whole stuff so it actually works -->
+  <vignette name="part-of">
+    <input frame="Part_orientational" lexUnit="DEFAULT"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Part" type="generic-part.n"/>
+        <assertion-constraint relation="we.part-of.r">
+          <map FE="Part" arg="part"/>
+          <map FE="Whole" arg="whole"/>
+        </assertion-constraint>
+      </or>
+      <type-constraint FE="Part" type="part-specifier.n"/>
+    </constraints>
+    <output relation="we.generic-part-of.r">
+      <map FE="Part" arg="part"/>
+      <map FE="Whole" arg="whole"/>
+    </output>
+  </vignette>
+</vignettes>

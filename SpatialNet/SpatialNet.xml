@@ -1,0 +1,9 @@
+<spatialnet xmlns="urn:spatialnet"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="urn:spatialnet SpatialNet.xsd"
+            xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="frames.xml"/>
+  <xi:include href="vignettes.xml"/>
+
+</spatialnet>

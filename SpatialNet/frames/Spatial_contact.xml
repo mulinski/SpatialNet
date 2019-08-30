@@ -1,0 +1,41 @@
+<frame name="Spatial_contact">
+  <parent name="Locative_relation"/>
+  <FE name="Figure"/>
+  <FE name="Ground"/>
+  <valencePatterns>
+
+    <!-- figures Xes on the ground -->
+    <pattern id="26">
+      <dep lexUnit="true" pred="true" order="2">
+        <dep FE="Figure" reln="nsubj|nsubjpass" order="1"/>
+        <dep FE="Ground" reln="nmod" order="4">
+          <dep reln="case" word="on" order="3"/>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- figure Xes against|into the ground -->
+    <pattern id="24">
+      <dep lexUnit="true" pred="true" order="2">
+        <dep FE="Figure" reln="nsubj|nsubjpass" order="1"/>
+        <dep FE="Ground" reln="nmod" order="4">
+          <dep reln="case" word="against|into" order="3"/>
+        </dep>
+      </dep>
+    </pattern>
+  </valencePatterns>
+
+  <lexUnit name="lean.v">
+    <lexeme lemma="lean" tag="VERB"/>
+    <use-pattern id="24"/>
+    <use-pattern id="26"/>
+  </lexUnit>
+  <lexUnit name="tilt.v">
+    <lexeme lemma="tilt" tag="VERB"/>
+    <use-pattern id="24"/>
+    <use-pattern id="26"/>
+  </lexUnit>
+  <lexUnit name="hang.v">
+    <lexeme lemma="hang" tag="VERB"/>
+    <use-pattern id="26"/>
+  </lexUnit>
+</frame>

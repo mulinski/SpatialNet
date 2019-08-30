@@ -1,0 +1,24 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+
+  <!-- X at/near Y -->
+  <vignette name="locally-at" parent="spatial-relation">
+    <input frame="Adjacency" lexUnit="at.adp"/>
+    <input frame="Adjacency" lexUnit="near.adp"/>
+    <output relation="gfx.locally-at.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- TODO: add from VigNet :we.nearby.r :we.nearer.r :we.near-to.r :we.nearer-to.r
+        :we.near-by.r :we.nearest-to.r
+        :we.closer-to.r :we.closest-to.r :we.close-to.r
+        :we.closest-by.r :we.close-by.r -->
+
+  <!-- X next to/beside/close to Y -->
+  <vignette name="next-to" parent="spatial-relation">
+    <input frame="Adjacency" lexUnit="next_to.adp"/>
+    <input frame="Adjacency" lexUnit="beside.adp"/>
+    <input frame="Adjacency" lexUnit="close_to.adp"/>
+    <output relation="gfx.next-to.r" parent="spatial-relation-mixin"/>
+  </vignette>
+</vignettes>

@@ -1,0 +1,74 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+
+  <!-- X left/right of Y -->
+  <vignette name="left-of" parent="spatial-relation">
+    <input frame="Non-gradable_proximity" lexUnit="left.n"/>
+    <output relation="gfx.left-of.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <vignette name="left-of-with-distance" parent="spatial-relation-with-distance">
+    <input frame="Non-gradable_proximity" lexUnit="left.n"/>
+    <output relation="gfx.left-of.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <vignette name="right-of" parent="spatial-relation">
+    <input frame="Non-gradable_proximity" lexUnit="right.n"/>
+    <output relation="gfx.right-of.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <vignette name="right-of-with-distance" parent="spatial-relation-with-distance">
+    <input frame="Non-gradable_proximity" lexUnit="right.n"/>
+    <output relation="gfx.right-of.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- X in front of/behind Y -->
+  <vignette name="in-front-of" parent="spatial-relation">
+    <input frame="Non-gradable_proximity" lexUnit="in_front_of.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="ahead_of.adv"/>
+    <output relation="gfx.in-front-of.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <vignette name="in-front-of-with-distance" parent="spatial-relation-with-distance">
+    <input frame="Non-gradable_proximity" lexUnit="in_front_of.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="ahead_of.adv"/>
+    <output relation="gfx.in-front-of.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <vignette name="behind" parent="spatial-relation">
+    <input frame="Non-gradable_proximity" lexUnit="behind.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="beyond.adp"/>
+    <output relation="gfx.behind.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <vignette name="behind-with-distance" parent="spatial-relation-with-distance">
+    <input frame="Non-gradable_proximity" lexUnit="behind.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="beyond.adp"/>
+    <output relation="gfx.behind.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- X  above Y -->
+  <vignette name="above" parent="spatial-relation">
+    <input frame="Directional_locative_relation" lexUnit="above.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="over.adp"/>
+    <output relation="gfx.above.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <!-- X some distance above Y -->
+  <vignette name="above-with-distance" parent="spatial-relation-with-distance">
+    <input frame="Directional_locative_relation" lexUnit="above.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="over.adp"/>
+    <output relation="gfx.above.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- X some distance below Y -->
+  <vignette name="below-with-distance" parent="spatial-relation-with-distance">
+    <input frame="Directional_locative_relation" lexUnit="below.adp"/>
+    <output relation="gfx.below.r" parent="spatial-relation-mixin"/>
+  </vignette>
+  <!-- X below/under Y -->
+  <vignette name="below-default" parent="spatial-relation">
+    <input frame="Directional_locative_relation" lexUnit="below.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="under.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="underneath.adp"/>
+    <output relation="gfx.below.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+
+</vignettes>

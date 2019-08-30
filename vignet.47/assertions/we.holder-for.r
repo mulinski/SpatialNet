@@ -1,0 +1,22 @@
+{"copyright":"VigNet: Copyright 2003-2017 (c), WordsEye Inc",
+"data":[{"we.holder-for.r":{"holder":"towel-rack.n","holder-for":"towel.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"tie-rack.n","holder-for":"necktie.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"spice-holder.n","holder-for":"spice-bottle.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"oven-rack.n","holder-for":"casserole-dish.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"oven-rack.n","holder-for":"roasting-pan.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"music-stand.n","holder-for":"sheet-music.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"microphone-dolly.n","holder-for":"microphone.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"mast.n","holder-for":"sail.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"magazine-rack.n","holder-for":"magazine.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"luggage-rack.n","holder-for":"luggage.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"hutch.n","holder-for":"tableware.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"hat-tree.n","holder-for":"hat.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"dish-rack.n","holder-for":"food-plate.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"dish-rack.n","holder-for":"food-bowl.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"dish-rack.n","holder-for":"dish.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"coat-rack.n","holder-for":"jacket.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"coat-rack.n","holder-for":"coat.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"candlestick-holder.n","holder-for":"candle.n","certainty":"typically-true-val.n"}},
+{"we.holder-for.r":{"holder":"bicycle-rack.n","holder-for":"bicycle.n","certainty":"typically-true-val.n"}}
+]
+}

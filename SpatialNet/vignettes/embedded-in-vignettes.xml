@@ -1,0 +1,35 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+  <!-- X embedded in (top surface of) Y -->
+  <vignette name="embedded-in" parent="spatial-relation">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <input frame="Containing" lexUnit="inside.adp"/>
+    <input frame="Containing" lexUnit="within.adp"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Ground" type="top-surface-tagged-item.n"/>
+        <assertion-constraint relation="gfx.spatial-tag.r">
+          <map arg="object" FE="Ground"/>
+          <map arg="tag-type" value="top-surface-tag.n"/>
+        </assertion-constraint>
+      </or>
+    </constraints>
+    <output relation="gfx.embedded-in.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- X embedded some distance in Y -->
+  <vignette name="embedded-in" parent="spatial-relation-with-distance">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <!--input frame="Containing" lexUnit="inside.adp"/-->
+    <output relation="gfx.embedded-in.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- X embedded in Y -->
+  <vignette name="embedded-in-default" parent="spatial-relation">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <input frame="Containing" lexUnit="inside.adp"/>
+    <input frame="Containing" lexUnit="within.adp"/>
+    <output relation="gfx.embedded-in.r" parent="spatial-relation-mixin"/>
+  </vignette>
+</vignettes>

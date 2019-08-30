@@ -1,0 +1,48 @@
+<frame name="Adjacency" xmlns="urn:spatialnet"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Locative_relation"/>
+  <FE name="Figure"/>
+  <FE name="Ground"/>
+  <valencePatterns>
+    <!-- fig is next to the ground -->
+    <!--pattern id="19">
+      <dep word="next" tag="ADJ">
+        <dep FE="Figure" reln="nsubj"/>
+        <dep FE="Ground" reln="nmod">
+          <dep reln="case" word="to"/>
+        </dep>
+      </dep>
+    </pattern-->
+  </valencePatterns>
+  <lexUnit name="at.adp">
+    <lexeme tag="ADP" word="at"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="near.adp">
+    <lexeme tag="ADP" word="near"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="beside.adp">
+    <lexeme tag="ADP" word="beside"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="next_to.adp">
+    <lexeme tag="ADP" word="next">
+      <dep reln="mwe" word="to"/>
+    </lexeme>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="close_to.adp">
+    <lexeme tag="ADP" word="close">
+      <dep reln="mwe" word="to"/>
+    </lexeme>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <!--TODO: "about the house"-->
+</frame>

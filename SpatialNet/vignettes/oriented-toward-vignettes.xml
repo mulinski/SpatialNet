@@ -1,0 +1,103 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+
+  <!-- parent vignette for X oriented toward  something -->
+  <vignette abstract="true" name="orientation-toward">
+    <input frame="Orientation"/>
+    <constraints>
+      <type-constraint FE="Entity" type="physical-entity.n"/>
+    </constraints>
+    <output name="orientation-toward" relation="gfx.orientation-toward.r">
+      <map FE="Entity" arg="figure"/>
+    </output>
+  </vignette>
+
+
+  <!-- X faces toward Y -->
+  <vignette name="face-toward" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="face.v"/>
+    <input frame="Orientation" lexUnit="toward.adp"/>
+    <input frame="Orientation" lexUnit="to.adp"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Target" type="physical-entity.n"/>
+        <type-constraint FE="Target" type="direction.n"/>
+      </or>
+    </constraints>
+    <output parent="orientation-toward">
+      <map FE="Target" arg="ground"/>
+    </output>
+  </vignette>
+
+  <!-- X faces (some direction) -->
+  <vignette name="face-forward" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="forward.adv"/>
+    <output parent="orientation-toward">
+      <map value="forward-direction.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-backward" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="backward.adv"/>
+    <output parent="orientation-toward">
+      <map value="backward-direction.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-down" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="down.adp"/>
+    <input frame="Orientation" lexUnit="face-down.a"/>
+    <output parent="orientation-toward">
+      <map value="down-direction.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-left" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="left.v"/>
+    <output parent="orientation-toward">
+      <map value="left-direction.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-right" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="right.adv"/>
+    <output parent="orientation-toward">
+      <map value="right-direction.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-up" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="up.adp"/>
+    <input frame="Orientation" lexUnit="face-up.a"/>
+    <output parent="orientation-toward">
+      <map value="up-direction.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-east" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="east.a"/>
+    <output parent="orientation-toward">
+      <map value="east.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-north" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="north.adv"/>
+    <output parent="orientation-toward">
+      <map value="north.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-northeast" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="northeast.adv"/>
+    <output parent="orientation-toward">
+      <map value="northeast.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-northwest" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="northwest.adv"/>
+    <output parent="orientation-toward">
+      <map value="northwest.n" arg="ground"/>
+    </output>
+  </vignette>
+  <vignette name="face-south" parent="orientation-toward">
+    <input frame="Orientation" lexUnit="south.adv"/>
+    <output parent="orientation-toward">
+      <map value="south.n" arg="ground"/>
+    </output>
+  </vignette>
+
+</vignettes>

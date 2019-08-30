@@ -1,0 +1,21 @@
+{"copyright":"VigNet: Copyright 2003-2017 (c), WordsEye Inc",
+"data":[{"we.japan.r":{"entity":"obj-bridge-vp5412"}},
+{"we.japan.r":{"entity":"toyota-vehicle.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"sushi.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"sushi-bowl.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"samurai-sword.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"pagoda.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"nissan-vehicle.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"mazda-vehicle.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"lexus-vehicle.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"japanese-torii.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"japanese-temple.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"japanese-restaurant.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"japanese-person.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"japanese-language.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"japanese-doll.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"japanese-deity.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"infiniti-vehicle.n","certainty":"typically-true-val.n"}},
+{"we.japan.r":{"entity":"honda-vehicle.n","certainty":"typically-true-val.n"}}
+]
+}

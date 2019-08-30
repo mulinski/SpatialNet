@@ -1,0 +1,53 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+
+  <!-- X leans on/against Y -->
+  <!-- TODO could update this to use new SGPs? -->
+  <vignette name="lean-on" parent="spatial-relation">
+    <input frame="Spatial_contact" lexUnit="lean.v"/>
+    <input frame="Spatial_contact" lexUnit="tilt.v"/>
+    <output relation="gfx.tilt-toward.r">
+      <map FE="Figure" arg="figure"/>
+      <map arg="ground" FE="Ground"/>
+    </output>
+    <output relation="gfx.next-to.r">
+      <map FE="Figure" arg="figure"/>
+      <map arg="ground" FE="Ground"/>
+    </output>
+  </vignette>
+
+  <!-- X leans/tilts toward Y -->
+  <vignette name="lean-toward">
+    <input frame="Orientation" lexUnit="lean.v"/>
+    <input frame="Orientation" lexUnit="tilt.v"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Target" type="physical-entity.n"/>
+        <type-constraint FE="Target" type="direction.n"/>
+      </or>
+    </constraints>
+    <output relation="gfx.tilt-toward.r" name="tilt-toward">
+      <map FE="Entity" arg="figure"/>
+      <map arg="ground" FE="Target"/>
+    </output>
+  </vignette>
+
+  <!-- X leans/tilts (some distance) toward Y -->
+  <vignette name="lean-with-distance" parent="lean-toward">
+    <input frame="Orientation" lexUnit="lean.v"/>
+    <input frame="Orientation" lexUnit="tilt.v"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Target" type="physical-entity.n"/>
+        <type-constraint FE="Target" type="direction.n"/>
+      </or>
+      <type-constraint FE="Unit" type="distance-unit.n"/>
+    </constraints>
+    <output parent="tilt-toward">
+      <map FE="Count" arg="measure-cardinality"/>
+      <map FE="Unit" arg="measure-unit"/>
+    </output>
+  </vignette>
+
+</vignettes>

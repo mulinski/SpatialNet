@@ -1,0 +1,21 @@
+{"copyright":"VigNet: Copyright 2003-2017 (c), WordsEye Inc",
+"data":[{"we.habitat-of.r":{"habitat":"sea.n","inhabitant":"sea-creature.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"land-area.n","inhabitant":"terrestial-plant.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"body-of-water.n","inhabitant":"aquatic-animal.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"body-of-water.n","inhabitant":"aquatic-plant.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"farm.n","inhabitant":"farm-animal.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"sea.n","inhabitant":"seabird.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"tropics.n","inhabitant":"orchid-plant.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"tropics.n","inhabitant":"parakeet.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"tropics.n","inhabitant":"parrot.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"tropics.n","inhabitant":"macaw.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"tropics.n","inhabitant":"tropical-fruit.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"tropics.n","inhabitant":"palm-tree.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"desert.n","inhabitant":"palo-verde-tree.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"desert.n","inhabitant":"succulent-plant.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"wooded-area.n","inhabitant":"deer.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"tropics.n","inhabitant":"orchid-plant.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"arctic.n","inhabitant":"polar-bear.n","certainty":"typically-true-val.n"}},
+{"we.habitat-of.r":{"habitat":"antarctic.n","inhabitant":"penguin.n","certainty":"typically-true-val.n"}}
+]
+}

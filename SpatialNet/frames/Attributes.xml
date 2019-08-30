@@ -1,0 +1,5 @@
+<frame name="Attributes" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <FE name="Entity"/>
+  <FE name="Attribute"/>
+  <FE name="Value"/>
+</frame>

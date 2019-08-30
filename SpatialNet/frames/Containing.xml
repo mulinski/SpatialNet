@@ -1,0 +1,22 @@
+<frame name="Containing" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Locative_relation"/>
+  <FE name="Figure"/>
+  <FE name="Ground"/>
+  <lexUnit name="in.adp">
+    <lexeme tag="ADP" word="in"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+    <use-pattern id="20"/>
+  </lexUnit>
+  <lexUnit name="inside.adp">
+    <lexeme tag="ADP" word="inside"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="within.adp">
+    <lexeme tag="ADP" word="within"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <!--TODO: "into"-->
+</frame>

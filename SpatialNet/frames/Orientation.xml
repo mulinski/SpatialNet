@@ -1,0 +1,216 @@
+<!-- TODO: subdivide into intrinsic orientation (adjectives e.g. supine upside-down etc) vs.
+     relative to another entity (toward Y, away from Y, etc.) -->
+<frame name="Orientation" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <FE name="Entity"/>
+  <FE name="Orientation"/>
+  <FE name="Distance"/>
+  <FE name="Target"/>
+  <valencePatterns>
+    <!-- the X entity -->
+    <pattern id="8">
+      <dep FE="Entity" tag="NOUN" order="2">
+        <dep FE="Orientation" pred="true" reln="compound" lexUnit="true" order="1"/>
+      </dep>
+    </pattern>
+    <!-- the entity is X -->
+    <pattern id="9">
+      <dep FE="Orientation" pred="true" lexUnit="true" order="2">
+        <dep FE="Entity" reln="nsubj" order="1"/>
+      </dep>
+    </pattern>
+    <!-- The X entity -->
+    <pattern id="10">
+      <dep FE="Entity" tag="NOUN" order="2">
+        <dep FE="Orientation" pred="true" reln="amod" lexUnit="true" order="1"/>
+      </dep>
+    </pattern>
+    <!--TODO: how to add very specific lexical patterns e.g. upside down -->
+    <!-- The entity is upside down -->
+    <pattern id="11">
+      <dep FE="Orientation" pred="true" word="down" order="3">
+        <dep FE="Entity" reln="nsubj" order="1"/>
+        <dep reln="advmod" word="upside" order="2"/>
+      </dep>
+    </pattern>
+    <!-- ;;================================================================================
+    ;; posture/orientation
+    ;;================================================================================ -->
+    <!-- TODO: do these really work for all verbs? should we have lemma="face"? a new frame for facing?   -->
+    <!-- ;; "the boy faces the house"
+(:match ((?rel :subject ?subj :direct-object ?val))
+ :types ((?rel :we.orientation-face.r))
+ :output ((?rel :entity ?subj :target ?val))) -->
+    <!-- NOTE: this one also takes care of "facing northeast/southeast/southwest/west" TODO: what about different verbs?-->
+    <pattern id="13">
+      <dep tag="VERB" pred="true" lexUnit="true" order="2">
+        <dep FE="Entity" reln="nsubj" order="1"/>
+        <dep FE="Target" reln="dobj" order="3"/>
+      </dep>
+    </pattern>
+    <!--  ;; "the boy faces to the north"
+(:match ((?rel :subject ?subj :dep ?prep) (?prep :object-of-prep ?target))
+ :types ((?rel :we.orientation-face.r))
+ :output ((?rel :entity ?subj :target ?target))) -->
+    <!--- used by to and toward -->
+    <pattern id="14">
+      <dep tag="VERB" pred="true" not-lemma="tilt|lean" order="2">
+        <dep FE="Entity" reln="nsubj" order="1"/>
+        <dep FE="Target" reln="nmod" order="4">
+          <dep reln="case" lexUnit="true" order="3"/>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- ;; "the boy is facing forward"
+(:match ((?rel :subject ?subj :adverb ?adv))
+ :types ((?rel :we.orientation-face.r)
+         (?adv t))
+ :strict-kb-match ((:we.adverb-to-entity.r :adverb ?adv :entity ?val))
+ :output ((?rel :entity ?subj :target ?val))) -->
+    <!-- TODO: a new frame for direction? -->
+    <pattern id="15">
+      <dep tag="VERB" pred="true" order="2">
+        <dep reln="nsubj" FE="Entity" order="1"/>
+        <dep FE="Target" reln="advmod" lexUnit="true" order="3"/>
+      </dep>
+    </pattern>
+    <pattern id="16">
+      <dep tag="VERB" pred="true" order="2">
+        <dep reln="nsubj" FE="Entity" order="1"/>
+        <dep FE="Target" reln="compound" lexUnit="true" order="3"/>
+      </dep>
+    </pattern>
+    <!-- entity Xes toward the target -->
+    <pattern id="25">
+      <dep lexUnit="true" pred="true" order="2">
+        <dep FE="Entity" reln="nsubj|nsubjpass" order="1"/>
+        <exclude-dep reln="dobj"/>
+        <dep FE="Target" reln="nmod" order="4">
+          <dep reln="case" word="toward|to" order="3"/>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- entity Xes count unit toward the target -->
+    <pattern id="26">
+      <dep lexUnit="true" pred="true" order="2">
+        <dep FE="Entity" reln="nsubj|nsubjpass" order="1"/>
+        <dep FE="Unit" reln="dobj" order="4">
+          <dep FE="Count" reln="nummod" order="3"/>
+        </dep>
+        <dep FE="Target" reln="nmod" order="6">
+          <dep reln="case" word="toward|to" order="5"/>
+        </dep>
+      </dep>
+    </pattern>
+  </valencePatterns>
+  <lexUnit name="face-down.a">
+    <lexeme tag="ADJ" word="face-down"/>
+    <use-pattern id="8"/>
+    <use-pattern id="9"/>
+  </lexUnit>
+  <lexUnit name="face-up.a">
+    <lexeme tag="ADJ" word="face-up"/>
+    <use-pattern id="8"/>
+    <use-pattern id="9"/>
+  </lexUnit>
+  <lexUnit name="prostrate.a">
+    <lexeme tag="ADJ" word="prostrate"/>
+    <use-pattern id="8"/>
+    <use-pattern id="9"/>
+  </lexUnit>
+  <lexUnit name="rightside-up.a">
+    <lexeme tag="ADJ" word="rightside-up"/>
+    <use-pattern id="8"/>
+    <use-pattern id="9"/>
+  </lexUnit>
+  <lexUnit name="sideways.a">
+    <lexeme tag="ADV" word="sideways"/>
+    <lexeme tag="ADJ" word="sideways"/>
+    <use-pattern id="8"/>
+    <use-pattern id="9"/>
+  </lexUnit>
+  <lexUnit name="supine.a">
+    <lexeme tag="ADJ" word="supine"/>
+    <use-pattern id="8"/>
+    <use-pattern id="9"/>
+  </lexUnit>
+  <lexUnit name="upright.a">
+    <lexeme tag="ADJ" word="upright"/>
+    <use-pattern id="10"/>
+    <use-pattern id="9"/>
+  </lexUnit>
+  <lexUnit name="upside-down.a">
+    <lexeme tag="ADJ" word="upside-down"/>
+    <use-pattern id="10"/>
+    <use-pattern id="9"/>
+    <use-pattern id="11"/>
+  </lexUnit>
+  <lexUnit name="face.v">
+    <lexeme tag="VERB" lemma="face"/>
+    <use-pattern id="13"/>
+  </lexUnit>
+  <lexUnit name="toward.adp">
+    <lexeme tag="ADP" word="toward"/>
+    <lexeme tag="ADP" word="towards"/>
+    <use-pattern id="14"/>
+  </lexUnit>
+  <lexUnit name="to.adp">
+    <lexeme tag="ADP" word="to"/>
+    <use-pattern id="14"/>
+  </lexUnit>
+  <!-- TODO: check with other verbs besides facing -->
+  <lexUnit name="forward.adv">
+    <lexeme tag="ADV" word="forward"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+  <lexUnit name="backward.adv">
+    <lexeme tag="ADV" word="backward"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+  <lexUnit name="down.adp">
+    <lexeme tag="ADP" word="down"/>
+    <use-pattern id="16"/>
+  </lexUnit>
+  <lexUnit name="left.v">
+    <lexeme tag="VERB" word="left"/>
+    <use-pattern id="16"/>
+  </lexUnit>
+  <lexUnit name="right.adv">
+    <lexeme tag="ADV" word="right"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+  <lexUnit name="up.adp">
+    <lexeme tag="ADP" word="up"/>
+    <use-pattern id="16"/>
+  </lexUnit>
+  <lexUnit name="east.a">
+    <lexeme tag="ADJ" word="east"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+  <lexUnit name="north.adv">
+    <lexeme tag="ADV" word="north"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+  <lexUnit name="northeast.adv">
+    <lexeme tag="ADV" word="northeast"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+  <lexUnit name="northwest.adv">
+    <lexeme tag="ADV" word="northwest"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+  <lexUnit name="south.adv">
+    <lexeme tag="ADV" word="south"/>
+    <use-pattern id="15"/>
+  </lexUnit>
+
+  <lexUnit name="lean.v">
+    <lexeme lemma="lean" tag="VERB"/>
+    <use-pattern id="25"/>
+    <use-pattern id="26"/>
+  </lexUnit>
+  <lexUnit name="tilt.v">
+    <lexeme lemma="tilt" tag="VERB"/>
+    <use-pattern id="25"/>
+    <use-pattern id="26"/>
+  </lexUnit>
+</frame>

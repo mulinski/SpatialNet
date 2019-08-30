@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="urn:spatialnet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="frame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="parentType" name="parent" minOccurs="0"/>
+        <xs:element type="FEType" name="FE" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="valencePatternsType" name="valencePatterns" minOccurs="0"/>
+        <xs:element type="lexUnitType" name="lexUnit" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="name"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="parentType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FEType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:string" name="parent" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="valencePatternsType">
+    <xs:sequence>
+      <xs:element type="patternType" name="pattern" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="patternType">
+    <xs:sequence>
+      <xs:element type="depType" name="dep"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="depType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="depType" name="dep"/>
+      <xs:element type="exclude-depType" name="exclude-dep"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="FE" use="optional"/>
+    <xs:attribute type="xs:string" name="pred" use="optional"/>
+    <xs:attribute type="xs:string" name="reln" use="optional"/>
+    <xs:attribute type="xs:string" name="lexUnit" use="optional"/>
+    <xs:attribute type="xs:string" name="order" use="optional"/>
+    <xs:attribute type="xs:string" name="tag" use="optional"/>
+    <xs:attribute type="xs:string" name="word" use="optional"/>
+    <xs:attribute type="xs:string" name="not-lemma" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="exclude-depType" mixed="true">
+    <xs:sequence>
+      <xs:element type="depType" name="dep"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="reln" use="optional"/>
+    <xs:attribute type="xs:string" name="FE" use="optional"/>
+    <xs:attribute type="xs:string" name="pred" use="optional"/>
+    <xs:attribute type="xs:string" name="lexUnit" use="optional"/>
+    <xs:attribute type="xs:string" name="order" use="optional"/>
+    <xs:attribute type="xs:string" name="tag" use="optional"/>
+    <xs:attribute type="xs:string" name="word" use="optional"/>
+    <xs:attribute type="xs:string" name="not-lemma" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="lexemeType" mixed="true">
+    <xs:sequence>
+      <xs:element type="depType" name="dep" minOccurs="0"/>
+      <xs:element type="exclude-depType" name="exclude-dep"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="tag" use="optional"/>
+    <xs:attribute type="xs:string" name="word" use="optional"/>
+    <xs:attribute type="xs:string" name="lemma" use="optional"/>
+    <xs:attribute type="xs:string" name="order" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="use-patternType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="id" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="lexUnitType">
+    <xs:sequence>
+      <xs:element type="lexemeType" name="lexeme"/>
+      <xs:element type="use-patternType" name="use-pattern" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+  </xs:complexType>
+
+</xs:schema>

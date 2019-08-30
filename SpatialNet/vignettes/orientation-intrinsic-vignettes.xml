@@ -1,0 +1,29 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+
+  <!-- parent vignette for orientation adjectives -->
+  <vignette abstract="true" name="orientation">
+    <input frame="Orientation"/>
+    <constraints>
+      <type-constraint FE="Entity" type="physical-entity.n"/>
+    </constraints>
+    <output name="orientation">
+      <map FE="Entity" arg="entity"/>
+    </output>
+  </vignette>
+
+  <!--orientation adjectives (upside-down, supine) TODO: sideways, rightside-up etc-->
+  <vignette name="supine" parent="orientation">
+    <input frame="Orientation" lexUnit="supine.a"/>
+    <output relation="gfx.supine.r" parent="orientation"/>
+  </vignette>
+  <vignette name="upside-down" parent="orientation">
+    <input frame="Orientation" lexUnit="upside-down.a"/>
+    <output relation="gfx.upside-down.r" parent="orientation"/>
+  </vignette>
+  <vignette name="upright" parent="orientation">
+    <input frame="Orientation" lexUnit="upright.a"/>
+    <output relation="gfx.upright.r" parent="orientation"/>
+  </vignette>
+</vignettes>

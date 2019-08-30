@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:spatialnet" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="vignettes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="vignette" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="inputType" name="input" maxOccurs="unbounded" minOccurs="0"/>
+              <xs:element type="constraintsType" name="constraints" minOccurs="0"/>
+              <xs:element type="outputType" name="output" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="abstract" use="optional"/>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+            <xs:attribute type="xs:string" name="parent" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="inputType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="frame" use="optional"/>
+        <xs:attribute type="xs:string" name="lexUnit" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="constraintsType">
+    <xs:sequence>
+      <xs:element type="orType" name="or" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="type-constraintType" name="type-constraint" maxOccurs="unbounded"
+        minOccurs="0"/>
+      <xs:element type="assertion-constraintType" name="assertion-constraint" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="orType">
+    <xs:sequence maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="orType" name="or" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="assertion-constraintType" name="assertion-constraint"/>
+      <xs:element type="type-constraintType" name="type-constraint"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="type-constraintType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="FE" use="optional"/>
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="assertion-constraintType">
+    <xs:sequence>
+      <xs:element type="mapType" name="map" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="relation" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="outputType" mixed="true">
+    <xs:sequence>
+      <xs:element type="mapType" name="map" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="parent" use="optional"/>
+    <xs:attribute type="xs:string" name="relation" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="mapType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="FE" use="optional"/>
+        <xs:attribute type="xs:string" name="arg" use="optional"/>
+        <xs:attribute type="xs:string" name="value" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,18 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+<!-- TODO: in the room => on the floor of the room -->
+  <vignette name="in-area" parent="spatial-relation">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <input frame="Locative_relation" lexUnit="middle.n"/>
+    <input frame="Locative_relation" lexUnit="center.n"/>
+    <constraints>
+      <!--or>
+        <type-constraint FE="Ground" type="3d-ground-object.n"/-->
+      <!--type-constraint FE="Ground" type="land-area.n"/-->
+      <!--/or-->
+      <type-constraint FE="Ground" type="location/locale/place/spot.n"/>
+    </constraints>
+    <output relation="gfx.on-top-surface.r" parent="spatial-relation-mixin"/>
+  </vignette>
+</vignettes>

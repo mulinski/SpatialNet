@@ -1,0 +1,94 @@
+<vignettes xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet ../vignettes.xsd">
+
+  <!-- cat under the table, person sitting under tree -->
+  <vignette name="under-canopy" parent="spatial-relation">
+    <input frame="Directional_locative_relation" lexUnit="below.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="under.adp"/>
+    <input frame="Non-gradable_proximity" lexUnit="underneath.adp"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Ground" type="canopy-tagged-item.n"/>
+        <assertion-constraint relation="gfx.spatial-tag.r">
+          <map arg="object" FE="Ground"/>
+          <map arg="tag-type" value="canopy-tag.n"/>
+        </assertion-constraint>
+      </or>
+    </constraints>
+    <output relation="gfx.under-canopy-cup.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- flower in vase -->
+  <vignette name="stem-in-cup" parent="spatial-relation">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <!--input frame="Containing" lexUnit="inside.adp"/-->
+    <constraints>
+      <or>
+        <type-constraint FE="Ground" type="cupped-tagged-item.n"/>
+        <assertion-constraint relation="gfx.spatial-tag.r">
+          <map arg="object" FE="Ground"/>
+          <map arg="tag-type" value="cup-tag.n"/>
+        </assertion-constraint>
+      </or>
+      <assertion-constraint relation="gfx.spatial-tag.r">
+        <map arg="object" FE="Figure"/>
+        <map arg="tag-type" value="stem-tag.n"/>
+      </assertion-constraint>
+    </constraints>
+    <output relation="gfx.stem-in-cup.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- apple in bowl -->
+  <vignette name="in-cup" parent="spatial-relation">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <input frame="Containing" lexUnit="inside.adp"/>
+    <input frame="Containing" lexUnit="within.adp"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Ground" type="cupped-tagged-item.n"/>
+        <assertion-constraint relation="gfx.spatial-tag.r">
+          <map arg="object" FE="Ground"/>
+          <map arg="tag-type" value="cup-tag.n"/>
+        </assertion-constraint>
+      </or>
+    </constraints>
+    <output relation="gfx.in-cup.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- rabbit in cage -->
+  <vignette name="in-enclosure" parent="spatial-relation">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <input frame="Containing" lexUnit="inside.adp"/>
+    <input frame="Containing" lexUnit="within.adp"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Ground" type="enclosure-tagged-item.n"/>
+        <assertion-constraint relation="gfx.spatial-tag.r">
+          <map arg="object" FE="Ground"/>
+          <map arg="tag-type" value="enclosure-tag.n"/>
+        </assertion-constraint>
+      </or>
+    </constraints>
+    <output relation="gfx.in-3d-enclosure.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+  <!-- bird hiding in the bush -->
+  <vignette name="in-entanglement" parent="spatial-relation">
+    <input frame="Containing" lexUnit="in.adp"/>
+    <input frame="Containing" lexUnit="inside.adp"/>
+    <input frame="Containing" lexUnit="within.adp"/>
+    <constraints>
+      <or>
+        <type-constraint FE="Ground" type="entangled-tagged-item.n"/>
+        <assertion-constraint relation="gfx.spatial-tag.r">
+          <map arg="object" FE="Ground"/>
+          <map arg="tag-type" value="entangled-tag.n"/>
+        </assertion-constraint>
+      </or>
+    </constraints>
+    <output relation="gfx.in-entanglement.r" parent="spatial-relation-mixin"/>
+  </vignette>
+
+
+</vignettes>

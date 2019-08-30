@@ -1,0 +1,104 @@
+<frames xmlns="urn:spatialnet"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:spatialnet frames.xsd">
+  <frame name="Measure_of_distance_and_length">
+    <FE name="Count"/>
+    <FE name="Unit"/>
+  </frame>
+
+  <frame name="Locative_relation">
+    <FE name="Figure"/>
+    <FE name="Ground"/>
+    <!-- for distance -->
+    <FE name="Count"/>
+    <FE name="Unit"/>
+    <FE name="Distance"/>
+  </frame>
+
+  <frame name="Adjacency">
+    <parent name="Locative_relation"/>
+    <FE name="Figure"/>
+    <FE name="Ground"/>
+  </frame>
+
+  <frame name="Containing">
+    <parent name="Locative_relation"/>
+    <FE name="Figure"/>
+    <FE name="Ground"/>
+  </frame>
+
+  <frame name="Directional_locative_relation">
+    <parent name="Locative_relation"/>
+    <FE name="Figure"/>
+    <FE name="Ground"/>
+    <!-- for distance -->
+    <FE name="Count"/>
+    <FE name="Unit"/>
+    <FE name="Distance"/>
+  </frame>
+
+  <frame name="Non-gradable_proximity">
+    <parent name="Locative_relation"/>
+    <FE name="Figure"/>
+    <FE name="Ground"/>
+  </frame>
+
+  <frame name="Spatial_contact">
+    <parent name="Locative_relation"/>
+    <FE name="Figure"/>
+    <FE name="Ground"/>
+  </frame>
+
+  <frame name="On_surface">
+    <parent name="Spatial_contact"/>
+    <FE name="Figure"/>
+    <FE name="Ground"/>
+  </frame>
+
+  <frame name="Attributes">
+    <FE name="Entity"/>
+    <FE name="Attribute"/>
+    <FE name="Value"/>
+  </frame>
+
+  <frame name="Gradable_attributes">
+    <parent name="Attributes"/>
+    <FE name="Entity"/>
+    <FE name="Attribute"/>
+    <FE name="Value"/>
+    <FE name="Degree"/>
+  </frame>
+
+  <frame name="Color">
+    <parent name="Gradable_attributes"/>
+    <FE name="Entity"/>
+    <FE name="Attribute"/>
+    <FE name="Color" parent="Value"/>
+  </frame>
+
+  <!-- TODO: subdivide this frame because it is massive -->
+  <frame name="Orientation">
+    <FE name="Entity"/>
+    <FE name="Orientation"/>
+    <FE name="Distance"/>
+    <FE name="Target"/>
+  </frame>
+
+
+  <!-- TODO fix part-whole so it actually works -->
+  <frame name="Part_whole">
+    <FE name="Part"/>
+    <FE name="Whole"/>
+  </frame>
+
+  <frame name="Part_orientational">
+    <parent name="Part_whole"/>
+    <FE name="Part"/>
+    <FE name="Whole"/>
+  </frame>
+
+
+  <!-- TODO.  spread across area e.g. throughout, along-->
+
+
+</frames>

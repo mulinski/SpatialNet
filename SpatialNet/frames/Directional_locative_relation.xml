@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--frame cBy="JKR" cDate="11/30/2005 07:49:56 PST Wed" name="Artificiality" ID="1660" xsi:schemaLocation="../schema/frame.xsd" xmlns="http://framenet.icsi.berkeley.edu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<frame name="Directional_locative_relation" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Locative_relation"/>
+  <FE name="Figure"/>
+  <FE name="Ground"/>
+  <!-- for distance -->
+  <FE name="Count"/>
+  <FE name="Unit"/>
+  <FE name="Distance"/>
+  <lexUnit name="above.adp">
+    <lexeme tag="ADP" word="above"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+    <use-pattern id="20"/>
+  </lexUnit>
+  <lexUnit name="below.adp">
+    <lexeme tag="ADP" word="below"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+    <use-pattern id="20"/>
+  </lexUnit>
+</frame>

@@ -1,0 +1,173 @@
+<frame name="Non-gradable_proximity" xmlns="urn:spatialnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:spatialnet frame.xsd">
+  <parent name="Locative_relation"/>
+  <FE name="Figure"/>
+  <FE name="Ground"/>
+  <valencePatterns>
+    <!-- The *fig* *dir* of the *ground* -->
+    <pattern id="3">
+      <dep pred="true" lexUnit="true" order="2">
+        <dep FE="Figure" reln="nsubjpass|nsubj" order="1"/>
+        <dep FE="Ground" reln="nmod" order="3">
+          <dep word="of" reln="case" order="3"/>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- The *fig* IS to the *dir* of the *ground* -->
+    <pattern id="4">
+      <dep tag="VERB" order="2">
+        <dep FE="Figure" reln="nsubj" order="1"/>
+        <dep pred="true" reln="nmod" lexUnit="true" order="4">
+          <dep word="to" reln="case" order="3"/>
+          <!--node word="the" reln="det"/-->
+          <dep FE="Ground" reln="nmod" order="6">
+            <dep word="of" reln="case" order="5"/>
+          </dep>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- The *fig* *dir* of the *ground* -->
+    <pattern id="5">
+      <dep FE="Figure" tag="NOUN" order="1">
+        <dep pred="true" reln="amod" lexUnit="true" order="2">
+          <dep FE="Ground" reln="nmod" order="4">
+            <dep word="of" reln="case" order="3"/>
+          </dep>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- ;; "near/at/on/to/by/off-to dog's right" -->
+    <pattern id="17">
+      <dep tag="VERB" order="2">
+        <dep FE="Figure" reln="nsubj" order="1"/>
+        <dep pred="true" reln="nmod" lexUnit="true" order="6">
+          <dep reln="case" word="to|at|near|by|on" order="3"/>
+          <dep reln="nmod" FE="Ground" order="4">
+            <dep reln="case" word="'s" order="5"/>
+          </dep>
+        </dep>
+      </dep>
+    </pattern>
+    <pattern id="18">
+      <dep tag="NOUN" FE="Figure" order="1">
+        <dep reln="nmod" lexUnit="true" order="5">
+          <dep reln="case" word="to|at|near|by|on" order="2"/>
+          <dep reln="nmod" FE="Ground" order="3">
+            <dep reln="case" word="'s" order="4"/>
+          </dep>
+        </dep>
+      </dep>
+    </pattern>
+    <!-- fig is count unit in X (front) of the ground -->
+    <!--pattern id="23">
+      <dep tag="NOUN" FE="Unit">
+        <dep FE="Figure" reln="nsubj"/>
+        <dep FE="Count" reln="nummod"/>
+        <dep reln="nmod" lexUnit="true">
+          <dep reln="case" word="in" pred="true"/>
+          <dep reln="nmod" FE="Ground">
+            <dep reln="case" word="of"/>
+          </dep>
+        </dep>
+      </dep>
+    </pattern-->
+    <!-- ?????? pattern id="27">
+      <dep tag="NOUN" FE="Figure" order="1">
+        <dep reln="acl" tag="VERB">
+          <dep reln="advmod" lexUnit="true">
+            <dep reln="nmod" FE="Ground">
+              <dep reln="case" word="of"/>
+            </dep>
+          </dep>
+        </dep>
+      </dep>
+    </pattern-->
+    <pattern id="28">
+      <dep FE="Unit" tag="NOUN" order="3">
+        <dep reln="nsubj" FE="Figure" order="1"/>
+        <dep reln="nummod" FE="Count" order="2"/>
+        <dep reln="advmod" lexUnit="true" order="3">
+          <dep reln="nmod" FE="Ground" order="5">
+            <dep reln="case" word="of" order="4"/>
+          </dep>
+        </dep>
+      </dep>
+    </pattern>
+    <!--pattern id="28">
+      <dep FE="Distance" tag="NOUN" order="2">
+        <dep reln="nsubj" FE="Figure" order="1"/>
+        <dep reln="advmod" lexUnit="true" order="3">
+          <dep reln="nmod" FE="Ground" order="5">
+            <dep reln="case" word="of" order="4"/>
+          </dep>
+        </dep>
+      </dep>
+    </pattern-->
+
+    <!-- TODO: the dog is JUST LEFT OF the cat (adjacency + position) -->
+  </valencePatterns>
+  <lexUnit name="under.adp">
+    <lexeme tag="ADP" word="under"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="underneath.adp">
+    <lexeme tag="ADP" word="underneath"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="over.adp">
+    <lexeme tag="ADP" word="over"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="behind.adp">
+    <lexeme tag="ADP" word="behind"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="beyond.adp">
+    <lexeme tag="ADP" word="beyond"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="in_front_of.adp">
+    <lexeme tag="ADP" word="in" order="1">
+      <dep word="front" reln="mwe" order="2"/>
+      <dep word="of" reln="mwe" order="3"/>
+    </lexeme>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+  <lexUnit name="left.n">
+    <!-- Note: left can be a verb here because Stanford CoreNLP parses it wrong -->
+    <lexeme tag="VERB|NOUN" word="left"/>
+    <use-pattern id="3"/>
+    <use-pattern id="4"/>
+    <use-pattern id="17"/>
+    <use-pattern id="18"/>
+  </lexUnit>
+  <lexUnit name="right.n">
+    <lexeme tag="ADJ|NOUN" word="right"/>
+    <use-pattern id="3"/>
+    <use-pattern id="4"/>
+    <use-pattern id="5"/>
+    <use-pattern id="17"/>
+    <use-pattern id="18"/>
+  </lexUnit>
+  <lexUnit name="ahead.adv">
+    <lexeme tag="ADV" word="ahead"/>
+    <!-- ???? use-pattern id="27"/-->
+    <use-pattern id="28"/>
+  </lexUnit>
+  <!--lexUnit name="front.n">
+    <lexeme tag="NOUN" word="front"/>
+    <use-pattern id="22"/>
+    <use-pattern id="23"/>
+  </lexUnit-->
+  <!--TODO: ATTACH THIS TO A VIGNETTE! CREATE new valence pattern with 2 grounds, variant on 1 and 2!-->
+  <lexUnit name="between.adp">
+    <lexeme tag="ADP" word="between"/>
+    <use-pattern id="1"/>
+    <use-pattern id="2"/>
+  </lexUnit>
+</frame>
